@@ -17,16 +17,55 @@ body{
 
 .main-bg{
   background-image: url('./../public/Abstract\ Paper.svg');
-  height: 100vh;
+  height: 100%;
   background-size: cover;
   box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.5);
+
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   
 }
 .login-bg{
   background-image: url('./../public/blob-haikei.svg');
-  height: 100vh;
+  height: 100%;
   background-size: cover;
   box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.5);
 
+}
+
+.slide-1{
+  background-image: url('../public/slide1.jpg');
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+ 
+}
+.slide-2{
+  background-image: url('../public/slide2jpg.jpg');
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+}
+.slide-3{
+  background-image: url('../public/slide3jpg.jpg');
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 

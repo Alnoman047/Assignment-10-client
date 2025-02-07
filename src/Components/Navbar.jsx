@@ -12,7 +12,7 @@ const Navbar = () => {
     <>
     <Link to={'/'}><li className='text-black'><h2>Home</h2></li></Link>
     <Link to={'/allItems'}><li className='text-black'><h2>All Art & Craft Items</h2></li></Link>
-    <Link to={'/addItems'}><li className='text-black'><h2>Add Craft Item</h2></li></Link>
+    <Link to={'/addCraftItem'}><li className='text-black'><h2>Add Craft Item</h2></li></Link>
     <Link to={'/myList'}><li className='text-black'><h2>My Art & Cart List</h2></li></Link>
     </>
     return (

@@ -12,6 +12,7 @@ import Login from './Pages/Login/Login.jsx';
 import AuthProvider from './Providers/AuthProvider.jsx';
 import Register from './Pages/Register/Register.jsx';
 import Error from './Pages/Error/Error.jsx';
+import AddCraftItem from './Pages/AddCraftItem/AddCraftItem.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,13 +21,17 @@ const router = createBrowserRouter([
     errorElement:<Error></Error>,
     children:[{
       path:"/",
-      element:<Home></Home>
+      element:<Home></Home>,
+      loader:()=> fetch("http://localhost:5000/addItems")
     },{
      path: "/login",
      element:<Login></Login>
     },{
       path:"/register",
       element:<Register></Register>
+    },{
+      path:"/addCraftItem",
+      element:<AddCraftItem></AddCraftItem>
     }]
   },
 ]);
