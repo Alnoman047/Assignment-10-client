@@ -13,6 +13,7 @@ import AuthProvider from './Providers/AuthProvider.jsx';
 import Register from './Pages/Register/Register.jsx';
 import Error from './Pages/Error/Error.jsx';
 import AddCraftItem from './Pages/AddCraftItem/AddCraftItem.jsx';
+import ViewDetails from './Pages/ViewDetails/ViewDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
     },{
       path:"/addCraftItem",
       element:<AddCraftItem></AddCraftItem>
+    },{
+      path:"viewDetails/:id",
+      element:<ViewDetails></ViewDetails>,
+      loader:({params})=> fetch(`http://localhost:5000/addItems/${params.id}`)
     }]
   },
 ]);
