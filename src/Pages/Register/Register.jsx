@@ -2,9 +2,10 @@ import React, { useContext } from 'react';
 import Navbar from '../../Components/Navbar';
 import { FcGoogle } from 'react-icons/fc';
 import { PiGithubLogoBold } from 'react-icons/pi';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import 'animate.css';
 import { AuthContext } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 
 const Register = () => {
@@ -15,12 +16,36 @@ const Register = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
+        if(!/[A-Z]/.test(password)){
+              Swal.fire("Add a uppercase letter!");
+              return
+        }
+        if(!/[0-9]/.test(password)){
+            Swal.fire("add at least one digit!");
+            return
+            
+        }
+        if(!/[a-z]/.test(password)){
+            Swal.fire("add at least one Uppercase!");
+            return
+            
+        }
+        if(password.length<6){
+            Swal.fire("password must be 6 letter!");
+            return
+            
+        }
         const photoURL = form.photoURL.value;
         signUpUser(email,password)
         .then(res=>{
             console.log(res)
+            Swal.fire("User Added Successfully!");
+         
         }) 
-        .catch(error=>console.error(error))
+        .catch(error=>{
+            console.error(error)
+            Swal.fire(error.message);
+        })
 
     }
     return (

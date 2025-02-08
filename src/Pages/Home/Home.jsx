@@ -10,7 +10,7 @@ import ItemCard from '../../Components/ItemCard';
 
 
 const Home = () => {
-    const items = useLoaderData();
+   
 
     
     return (
@@ -21,15 +21,7 @@ const Home = () => {
 
            <div className=''>
            
-            <div>
-            <h2 className="text-center text-4xl mb-10 text-white font-bold">Our Items</h2>
-            <div className='grid md:grid-cols-2 lg:grid-cols-3'>
-                {
-                  items.map(item=><ItemCard item={item} key={item._id}></ItemCard>)
-                }
-                </div>
-            </div>
-
+           
            </div>
         </div>
     );

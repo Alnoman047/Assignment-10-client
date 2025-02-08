@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 
 const Navbar = () => {
     const {user,signOutUser} = useContext(AuthContext);
+    const [hover,setHovered]=useState(false);
     const handleLogout = ()=>{
         return signOutUser();
     }
@@ -13,7 +14,7 @@ const Navbar = () => {
     <Link to={'/'}><li className='text-black'><h2>Home</h2></li></Link>
     <Link to={'/allItems'}><li className='text-black'><h2>All Art & Craft Items</h2></li></Link>
     <Link to={'/addCraftItem'}><li className='text-black'><h2>Add Craft Item</h2></li></Link>
-    <Link to={'/myList'}><li className='text-black'><h2>My Art & Cart List</h2></li></Link>
+    <Link to={'/myCart'}><li className='text-black'><h2>My Art & Cart List</h2></li></Link>
     </>
     return (
         <div className="navbar bg-[#FF8C00] text-black">
@@ -46,8 +47,25 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal  bg-[#FF8C00] px-1">
                    {navLinks}
                 </ul>
+            </div>  
+               
+            
+            <div className="navbar-end gap-4">
+            <div className='flex items-center gap-2' >
+            <p >{user?user.displayName:" "}</p>
+
+                <div className='flex'>
+                
+                    <img  onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)} className='w-10 relative rounded-lg' src={user?user.photoURL:" "} alt="" />
+                {
+                    hover?<p className='absolute top-0 p-2 bg-black bg-opacity-75 text-white text-sm rounded-full'>{user.displayName}</p>: ' '
+                }
+               
+              
+                </div>
+              
+                
             </div>
-            <div className="navbar-end">
                {
                 user? <h2 onClick={handleLogout} className="btn btn-secondary bg-yellow-400 border-none">Logout</h2>:<Link to={'/login'}> <h2 className="btn btn-secondary bg-yellow-400 border-none">Login</h2></Link>
                }

@@ -2,14 +2,16 @@ import React, { useContext, useState } from 'react';
 import Navbar from '../../Components/Navbar';
 import { FcGoogle } from 'react-icons/fc';
 import { PiGithubLogoBold } from 'react-icons/pi';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import 'animate.css';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 const Login = () => {
-    const { signInUser,signInWithGoogle,signInWithGit } = useContext(AuthContext)
+    const { signInUser,signInWithGoogle,signInWithGit,user } = useContext(AuthContext)
     const [error,setError]=useState(false);
+    const navigate = useNavigate();
+    const location =useLocation()
     
     const handleLogin = e => {
         
@@ -23,21 +25,41 @@ const Login = () => {
         
             .then(res => {
                 console.log(res.user)
+               Swal.fire("Welcome!");
+              navigate(location?.state?location.state:'/')
             })
             
             .catch(error => {
                 
                 Swal.fire("SweetAlert2 is working!");
-              
+              console.log(error)
                 
             })
            
     }
     const handleGoogle = ()=>{
-        return signInWithGoogle();
+       signInWithGoogle()
+       .then(res=>{
+        console.log(res.user)
+        navigate(location?.state?location.state:'/')
+        
+       })
+       .catch(error=>{
+        console.error(error)
+        Swal.fire("SweetAlert2 is working!");
+       })
     }
     const handleGit = ()=>{
-        return signInWithGit()
+         signInWithGit()
+        .then(res=>{
+            console.log(res.user)
+            navigate(location?.state?location.state:'/')
+            
+           })
+           .catch(error=>{
+            console.error(error)
+            Swal.fire("SweetAlert2 is working!");
+           })
     }
     return (
         <div className='login-bg'>

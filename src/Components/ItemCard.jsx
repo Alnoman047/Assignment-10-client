@@ -9,11 +9,12 @@ const ItemCard = ({ item }) => {
   <figure>
     <img
       src={imgURL}
+      className='h-96'
       alt="Shoes" />
   </figure>
-  <div className="card-body bg-[#490e0e] text-white">
+  <div className="card-body bg-[#490e0e]  text-white">
     <h2 className="card-title text-white">{itemName}</h2>
-    <p className='font-bold text-yellow-300'>Price: {price} TK</p>
+    <p className='font-bold text-yellow-300 '>Price: {price} TK</p>
     <p className='flex gap-2 items-center'>Rating: <IoStar className='text-yellow-200'></IoStar> {rating}</p>
     <p>{description.length>200?description.slice(0,100):description}</p>
     <div className="card-actions ">

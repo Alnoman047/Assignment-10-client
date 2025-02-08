@@ -14,6 +14,9 @@ import Register from './Pages/Register/Register.jsx';
 import Error from './Pages/Error/Error.jsx';
 import AddCraftItem from './Pages/AddCraftItem/AddCraftItem.jsx';
 import ViewDetails from './Pages/ViewDetails/ViewDetails.jsx';
+import PrivateRoute from './Routes/PrivateRoute.jsx';
+import AllCartItems from './Pages/AllCartItems/AllCartItems.jsx';
+import MyCartList from './Pages/MyCartList/MyCartList.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +26,7 @@ const router = createBrowserRouter([
     children:[{
       path:"/",
       element:<Home></Home>,
-      loader:()=> fetch("http://localhost:5000/addItems")
+      
     },{
      path: "/login",
      element:<Login></Login>
@@ -32,11 +35,19 @@ const router = createBrowserRouter([
       element:<Register></Register>
     },{
       path:"/addCraftItem",
-      element:<AddCraftItem></AddCraftItem>
+      element:<PrivateRoute><AddCraftItem></AddCraftItem></PrivateRoute>
     },{
       path:"viewDetails/:id",
-      element:<ViewDetails></ViewDetails>,
+      element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
       loader:({params})=> fetch(`http://localhost:5000/addItems/${params.id}`)
+    },{
+      path:"/allItems",
+      element:<AllCartItems></AllCartItems>,
+      loader:()=> fetch("http://localhost:5000/addItems")
+    },{
+      path:"/myCart",
+      element:<PrivateRoute><MyCartList></MyCartList></PrivateRoute>,
+      loader:()=> fetch("http://localhost:5000/addItems")
     }]
   },
 ]);
