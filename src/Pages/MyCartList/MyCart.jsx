@@ -4,7 +4,18 @@ import { IoStar } from 'react-icons/io5';
 
 const MyCart = ({ cart }) => {
     const { imgURL, itemName, subcategory, description, price, rating, customization, stock, email, name, _id } = cart;
-  
+    
+    const handleDelete = id =>{
+        fetch(`http://localhost:5000/addItems/${id}`,{
+            method:"DELETE"
+        })
+        .then(res=>res.json())
+        .then(data=>{
+       console.log(data)
+            
+        })
+
+    }
     return (
         <div >
            
@@ -24,7 +35,7 @@ const MyCart = ({ cart }) => {
                     <div className="card-actions ">
                         
                     <Link to={`/update/${_id}`}><button className=' btn btn-primary bg-yellow-300 border-none'>Update</button></Link>
-                    <button className=' btn btn-primary bg-yellow-300 border-none'>Delete</button>
+                    <button onClick={()=>handleDelete(_id)} className=' btn btn-primary bg-yellow-300 border-none'>Delete</button>
                      </div>
                 </div>
             </div>
