@@ -19,6 +19,7 @@ import AllCartItems from './Pages/AllCartItems/AllCartItems.jsx';
 import MyCartList from './Pages/MyCartList/MyCartList.jsx';
 import AddCart from './Pages/AddCart/AddCart.jsx';
 import CardViewDetails from './Pages/CardViewDetails/CardViewDetails.jsx';
+import UpdateCart from './Pages/UpdateCart/UpdateCart.jsx';
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       path:"/cardViewDetails/:id",
       element:<CardViewDetails></CardViewDetails>,
       loader:({params})=> fetch(`http://localhost:5000/cards/${params.id}`)
+    },{
+      path: "/update/:id",
+      element:<PrivateRoute><UpdateCart></UpdateCart></PrivateRoute>,
+      loader: ({params})=> fetch(`http://localhost:5000/addItems/${params.id}`)
     }]
   },
 ]);
