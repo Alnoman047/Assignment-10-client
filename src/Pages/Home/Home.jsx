@@ -7,9 +7,12 @@ import ill3 from "../../../public/ill3.png"
 import Banner from '../../Components/Banner';
 import { useLoaderData } from 'react-router-dom';
 import ItemCard from '../../Components/ItemCard';
+import Cards from '../../Components/Cards';
 
 
 const Home = () => {
+    const cards = useLoaderData();
+
    
 
     
@@ -18,9 +21,12 @@ const Home = () => {
             <Navbar></Navbar>
             <Banner></Banner>
             
+            <h2 className="text-4xl text-white text-center font-bold my-10">Our Crafted Items!</h2>
+           <div className='grid md:grid-cols-2 lg:grid-cols-3'>
 
-           <div className=''>
-           
+           {
+            cards.map(card=><Cards card={card} key={card._id}></Cards>)
+           }
            
            </div>
         </div>

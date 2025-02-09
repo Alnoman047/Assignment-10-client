@@ -17,6 +17,8 @@ import ViewDetails from './Pages/ViewDetails/ViewDetails.jsx';
 import PrivateRoute from './Routes/PrivateRoute.jsx';
 import AllCartItems from './Pages/AllCartItems/AllCartItems.jsx';
 import MyCartList from './Pages/MyCartList/MyCartList.jsx';
+import AddCart from './Pages/AddCart/AddCart.jsx';
+import CardViewDetails from './Pages/CardViewDetails/CardViewDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +28,7 @@ const router = createBrowserRouter([
     children:[{
       path:"/",
       element:<Home></Home>,
+      loader:()=> fetch("http://localhost:5000/cards")
       
     },{
      path: "/login",
@@ -48,6 +51,13 @@ const router = createBrowserRouter([
       path:"/myCart",
       element:<PrivateRoute><MyCartList></MyCartList></PrivateRoute>,
       loader:()=> fetch("http://localhost:5000/addItems")
+    },{
+      path:"/addCart",
+      element:<AddCart></AddCart>
+    },{
+      path:"/cardViewDetails/:id",
+      element:<CardViewDetails></CardViewDetails>,
+      loader:({params})=> fetch(`http://localhost:5000/cards/${params.id}`)
     }]
   },
 ]);
