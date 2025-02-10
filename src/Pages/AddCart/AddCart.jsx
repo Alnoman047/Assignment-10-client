@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../../Components/Navbar';
+import Foot from '../../Components/Foot';
 
 const AddCart = () => {
     const handleAddItem = e=>{
@@ -120,7 +121,7 @@ const AddCart = () => {
        </form>
        </div>
        </div>
-
+<Foot></Foot>
         </div>
     );
 };

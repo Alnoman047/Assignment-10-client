@@ -1,13 +1,14 @@
 
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Navbar from '../../Components/Navbar';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import MyCart from './MyCart';
+import Foot from '../../Components/Foot';
 
 const MyCartList = () => {
-    const items = useLoaderData();
-    
+    const data = useLoaderData();
+    const [items,setItems]=useState(data);
     const {user}=useContext(AuthContext);
     
     const myCart = items.filter(item=> item.email===user.email)
@@ -23,9 +24,10 @@ const MyCartList = () => {
             
           <div className='grid   lg:grid-cols-3'>
           {
-                myCart.map(aCart=><MyCart cart={aCart} key={aCart._id}></MyCart>)
+                myCart.map(aCart=><MyCart items={items} setItems={setItems} cart={aCart} key={aCart._id}></MyCart>)
             }
           </div>
+          <Foot></Foot>
         </div>
     );
 };

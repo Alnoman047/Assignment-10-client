@@ -7,6 +7,7 @@ import 'animate.css';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import Swal from 'sweetalert2';
+import Foot from '../../Components/Foot';
 const Login = () => {
     const { signInUser,signInWithGoogle,signInWithGit,user } = useContext(AuthContext)
     const [error,setError]=useState(false);
@@ -31,7 +32,7 @@ const Login = () => {
             
             .catch(error => {
                 
-                Swal.fire("SweetAlert2 is working!");
+                Swal.fire(error.message);
               console.log(error)
                 
             })
@@ -46,7 +47,7 @@ const Login = () => {
        })
        .catch(error=>{
         console.error(error)
-        Swal.fire("SweetAlert2 is working!");
+        Swal.fire(error.message);
        })
     }
     const handleGit = ()=>{
@@ -58,7 +59,7 @@ const Login = () => {
            })
            .catch(error=>{
             console.error(error)
-            Swal.fire("SweetAlert2 is working!");
+            Swal.fire(error.message);
            })
     }
     return (
@@ -112,7 +113,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-
+<Foot></Foot>
         </div>
     );
 };

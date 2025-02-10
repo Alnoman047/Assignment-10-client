@@ -6,6 +6,7 @@ import { Link, Navigate } from 'react-router-dom';
 import 'animate.css';
 import { AuthContext } from '../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
+import Foot from '../../Components/Foot';
 
 
 const Register = () => {
@@ -16,6 +17,9 @@ const Register = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
+        const photoURL = form.photoURL.value;
+        const userInfo = {name,email,photoURL};
+       
         if(!/[A-Z]/.test(password)){
               Swal.fire("Add a uppercase letter!");
               return
@@ -35,11 +39,21 @@ const Register = () => {
             return
             
         }
-        const photoURL = form.photoURL.value;
+        
         signUpUser(email,password)
         .then(res=>{
             console.log(res)
             Swal.fire("User Added Successfully!");
+            fetch('http://localhost:5000/users/',{
+                method:"POST",
+                headers:{
+                    "content-type":"application/json"
+                },
+                body: JSON.stringify(userInfo)
+                
+            })
+            .then(res=>res.json())
+                .then(data=>console.log(data))
          
         }) 
         .catch(error=>{
@@ -100,7 +114,7 @@ const Register = () => {
                 </div>
             </div>
         </div>
-
+<Foot></Foot>
     </div>
     );
 };

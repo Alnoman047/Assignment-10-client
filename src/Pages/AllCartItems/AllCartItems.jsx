@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../../Components/Navbar';
 import ItemCard from '../../Components/ItemCard';
 import { useLoaderData } from 'react-router-dom';
+import Foot from '../../Components/Foot';
 
 const AllCartItems = () => {
     const items = useLoaderData();
@@ -16,7 +17,7 @@ const AllCartItems = () => {
                 }
                 </div>
             </div>
-
+       <Foot></Foot>
         </div>
     );
 };

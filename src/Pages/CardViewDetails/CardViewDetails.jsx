@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Navbar from '../../Components/Navbar';
 import { IoStar } from 'react-icons/io5';
+import Foot from '../../Components/Foot';
 
 const CardViewDetails = () => {
     const cards = useLoaderData();
@@ -26,6 +27,7 @@ const CardViewDetails = () => {
                 <p className='text-3xl font-extrabold text-green-500'>Price: {price} TK</p>
             </div>
         </div>
+        <Foot></Foot>
     </div>
     );
 };

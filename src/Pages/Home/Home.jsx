@@ -8,6 +8,8 @@ import Banner from '../../Components/Banner';
 import { useLoaderData } from 'react-router-dom';
 import ItemCard from '../../Components/ItemCard';
 import Cards from '../../Components/Cards';
+import Footer from '../../Components/Foot';
+import Foot from '../../Components/Foot';
 
 
 const Home = () => {
@@ -27,8 +29,9 @@ const Home = () => {
            {
             cards.map(card=><Cards card={card} key={card._id}></Cards>)
            }
-           
+         
            </div>
+           <Foot></Foot>
         </div>
     );
 };

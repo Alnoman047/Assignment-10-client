@@ -1,13 +1,35 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 
 const Navbar = () => {
     const {user,signOutUser} = useContext(AuthContext);
     const [hover,setHovered]=useState(false);
+    const [photoData,setPhotoData]=useState([])
+    // if(user){
+    //     if(!user.photoURl){
+    //         const findPhoto =photoData.find(photo=> photo.email === user.email)
+    //         return findPhoto
+    //     }
+        
+    // }
+   
     const handleLogout = ()=>{
         return signOutUser();
     }
+        
+   console.log(user)
+    useEffect(()=>{
+        fetch("http://localhost:5000/users")
+        .then(res=>res.json())
+        .then(data=>setPhotoData(data))
+        
+    },[])
+    if(user){
+        
+        // return findPhoto
+    }
+ 
 
     const navLinks = 
     <>
@@ -52,11 +74,12 @@ const Navbar = () => {
             
             <div className="navbar-end gap-4">
             <div className='flex items-center gap-2' >
-            <p >{user?user.displayName:" "}</p>
+            
 
                 <div className='flex'>
+                  
                 
-                    <img  onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)} className='w-10 relative rounded-lg' src={user?user.photoURL:" "} alt="" />
+                    <img  onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)} className='w-10 relative rounded-lg' src={user&&user.photoURL||" "} alt="" />
                 {
                     hover?<p className='absolute top-0 p-2 bg-black bg-opacity-75 text-white text-sm rounded-full'>{user.displayName}</p>: ' '
                 }

@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from '../../Components/Navbar';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import Foot from '../../Components/Foot';
 
 
 const UpdateCart = () => {
@@ -135,7 +136,7 @@ const UpdateCart = () => {
        </form>
        </div>
        </div>
-
+<Foot></Foot>
         </div>
     );
 };

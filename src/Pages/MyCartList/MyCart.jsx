@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { IoStar } from 'react-icons/io5';
 
-const MyCart = ({ cart }) => {
+const MyCart = ({ cart,items,setItems }) => {
     const { imgURL, itemName, subcategory, description, price, rating, customization, stock, email, name, _id } = cart;
     
     const handleDelete = id =>{
@@ -12,7 +12,8 @@ const MyCart = ({ cart }) => {
         .then(res=>res.json())
         .then(data=>{
        console.log(data)
-            
+       const remaining = items.filter(item => item._id !== id);
+       setItems(remaining)
         })
 
     }
