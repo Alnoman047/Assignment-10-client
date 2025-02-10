@@ -11,6 +11,7 @@ import Cards from '../../Components/Cards';
 import Footer from '../../Components/Foot';
 import Foot from '../../Components/Foot';
 import Blogs from '../../Components/Blogs';
+import Discount from '../../Components/Discount';
 
 
 const Home = () => {
@@ -34,6 +35,7 @@ const Home = () => {
            </div>
            <h2 className='text-center text-4xl text-white my-10'>Blogs</h2>
            <Blogs></Blogs>
+           <Discount></Discount>
            <Foot></Foot>
         </div>
     );
