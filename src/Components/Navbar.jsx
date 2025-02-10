@@ -5,31 +5,15 @@ import { AuthContext } from '../Providers/AuthProvider';
 const Navbar = () => {
     const {user,signOutUser} = useContext(AuthContext);
     const [hover,setHovered]=useState(false);
-    const [photoData,setPhotoData]=useState([])
-    // if(user){
-    //     if(!user.photoURl){
-    //         const findPhoto =photoData.find(photo=> photo.email === user.email)
-    //         return findPhoto
-    //     }
-        
-    // }
+   
+    
    
     const handleLogout = ()=>{
         return signOutUser();
     }
         
-   console.log(user)
-    useEffect(()=>{
-        fetch("http://localhost:5000/users")
-        .then(res=>res.json())
-        .then(data=>setPhotoData(data))
-        
-    },[])
-    if(user){
-        
-        // return findPhoto
-    }
- 
+  
+   
 
     const navLinks = 
     <>

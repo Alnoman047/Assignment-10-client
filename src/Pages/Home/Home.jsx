@@ -25,7 +25,7 @@ const Home = () => {
             <Navbar></Navbar>
             <Banner></Banner>
             
-            <h2 className="text-4xl text-white text-center font-bold my-10">Our Crafted Items!</h2>
+            <h2 className="text-4xl text-black text-center  my-10">Our Crafted Items!</h2>
            <div className='grid md:grid-cols-2 lg:grid-cols-3'>
 
            {
@@ -33,7 +33,7 @@ const Home = () => {
            }
          
            </div>
-           <h2 className='text-center text-4xl text-white my-10'>Blogs</h2>
+           <h2 className='text-center text-4xl text-black my-10'>Blogs</h2>
            <Blogs></Blogs>
            <Discount></Discount>
            <Foot></Foot>

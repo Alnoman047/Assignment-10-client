@@ -7,8 +7,8 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
     flowbite.content(),
   ],
-  theme: {
-    extend: {},
+  daisyui: {
+    themes: ["autumn"],
   },
   plugins: [require("flyonui"), require('daisyui'), flowbite.plugin(),],
 }

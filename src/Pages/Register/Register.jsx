@@ -44,7 +44,7 @@ const Register = () => {
         .then(res=>{
             console.log(res)
             Swal.fire("User Added Successfully!");
-            fetch('http://localhost:5000/users/',{
+            fetch('https://art-dairy-2-qo7z3baqq-captainboggeys-projects.vercel.app/users',{
                 method:"POST",
                 headers:{
                     "content-type":"application/json"
@@ -80,25 +80,25 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text text-yellow-300">Name</span>
                             </label>
-                            <input type="text" name='name' placeholder="name" className="input input-bordered bg-[#490e0e]" required />
+                            <input type="text" name='name' placeholder="name" className="input input-bordered " required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text text-yellow-300">Email</span>
                             </label>
-                            <input type="email" name='email' placeholder="email" className="input input-bordered bg-[#490e0e]" required />
+                            <input type="email" name='email' placeholder="email" className="input input-bordered " required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text text-yellow-300">PhotoURL</span>
                             </label>
-                            <input type="text" name='photoURL' placeholder="URL" className="input input-bordered bg-[#490e0e]" required />
+                            <input type="text" name='photoURL' placeholder="URL" className="input input-bordered " required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text text-yellow-300">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="password" className="input input-bordered bg-[#490e0e]" required />
+                            <input type="password" name='password' placeholder="password" className="input input-bordered " required />
                             
                         </div>
                         

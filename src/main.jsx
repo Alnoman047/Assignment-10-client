@@ -29,8 +29,8 @@ const router = createBrowserRouter([
     children:[{
       path:"/",
       element:<Home></Home>,
-      loader:()=> fetch("http://localhost:5000/cards")
-      
+     
+      loader:()=> fetch("https://art-dairy-2-qo7z3baqq-captainboggeys-projects.vercel.app/cards")
     },{
      path: "/login",
      element:<Login></Login>
@@ -41,28 +41,30 @@ const router = createBrowserRouter([
       path:"/addCraftItem",
       element:<PrivateRoute><AddCraftItem></AddCraftItem></PrivateRoute>
     },{
-      path:"viewDetails/:id",
+      path:"/viewDetails/:id",
       element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-      loader:({params})=> fetch(`http://localhost:5000/addItems/${params.id}`)
+      loader:({params})=> fetch(`https://art-dairy-2-qo7z3baqq-captainboggeys-projects.vercel.app/addItems/${params.id}`)
     },{
       path:"/allItems",
       element:<AllCartItems></AllCartItems>,
-      loader:()=> fetch("http://localhost:5000/addItems")
+      loader:()=> fetch("https://art-dairy-2-qo7z3baqq-captainboggeys-projects.vercel.app/addItems")
     },{
       path:"/myCart",
       element:<PrivateRoute><MyCartList></MyCartList></PrivateRoute>,
-      loader:()=> fetch("http://localhost:5000/addItems")
+      loader:()=> fetch("https://art-dairy-2-qo7z3baqq-captainboggeys-projects.vercel.app/addItems")
     },{
       path:"/addCart",
       element:<AddCart></AddCart>
-    },{
+    }
+    ,{
       path:"/cardViewDetails/:id",
       element:<CardViewDetails></CardViewDetails>,
-      loader:({params})=> fetch(`http://localhost:5000/cards/${params.id}`)
-    },{
+      loader:({params})=> fetch(`https://art-dairy-2-qo7z3baqq-captainboggeys-projects.vercel.app/cards/${params.id}`)
+    }
+    ,{
       path: "/update/:id",
       element:<PrivateRoute><UpdateCart></UpdateCart></PrivateRoute>,
-      loader: ({params})=> fetch(`http://localhost:5000/addItems/${params.id}`)
+      loader: ({params})=> fetch(`https://art-dairy-2-qo7z3baqq-captainboggeys-projects.vercel.app/addItems/${params.id}`)
     }]
   },
 ]);

@@ -9,7 +9,7 @@ const ViewDetails = () => {
     const{imgURL,itemName,subcategory,description,price,rating,customization,stock,email,name,_id}=item
    
     return (
-        <div className='main-bg text-white '>
+        <div className=' text-white '>
             <Navbar></Navbar>
             <h2 className="text-center text-4xl text-white my-10">Grab Yours!</h2>
             <div className='grid  lg:grid-cols-3  gap-2 pb-20 '>

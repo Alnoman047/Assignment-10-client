@@ -7,10 +7,10 @@ import Foot from '../../Components/Foot';
 const AllCartItems = () => {
     const items = useLoaderData();
     return (
-        <div className='main-bg'>
+        <div className=''>
             <Navbar></Navbar>
             <div>
-            <h2 className="text-center text-4xl mb-10 text-white font-bold mt-10">Our Community</h2>
+            <h2 className="text-center text-4xl mb-10 text-black font-bold mt-10">Our Community</h2>
             <div className='grid   lg:grid-cols-3'>
                 {
                   items.map(item=><ItemCard item={item} key={item._id}></ItemCard>)

@@ -23,7 +23,7 @@ const UpdateCart = () => {
         const email= form.email.value;
         const name = form.name.value;
         const itemInfo = {imgURL,itemName,subcategory,description,price,rating,customization,stock,email,name};
-        fetch(`http://localhost:5000/addItems/${_id}`,{
+        fetch(`https://art-dairy-2-qo7z3baqq-captainboggeys-projects.vercel.app/addItems/${_id}`,{
             method:"PUT",
             headers:{
                 "content-type":"application/json"
@@ -48,7 +48,7 @@ const UpdateCart = () => {
         <Navbar></Navbar>
        <div className=''>
        <h2 className="text-4xl text-center mt-10 ">Update Your  Items</h2>
-       <div className='main-bg  '>
+       <div className='  '>
        <form onSubmit={handleAddItem} className=' grid md:grid-cols-2 max-w-2xl mt-10 mx-auto items-center  '>
            <label className="form-control  max-w-xs">
                <div className="label">
@@ -131,7 +131,7 @@ const UpdateCart = () => {
               
            </label>
            <label className='form-control mb-40  mt-10 col-span-2'>
-              <input type="submit" className='btn' value="Update" />
+              <input type="submit" className='btn bg-green-600' value="Update" />
            </label>
        </form>
        </div>

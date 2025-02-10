@@ -19,7 +19,7 @@ const MyCartList = () => {
             <Navbar></Navbar>
            
             
-                <h2 className='text-center text-white text-4xl font-bold mb-10 mt-10'>{myCart.length===0?"No Items Added":'My Items'}</h2>
+                <h2 className='text-center text-black text-4xl font-bold mb-10 mt-10'>{myCart.length===0?"No Items Added":'My Items'}</h2>
             
             
           <div className='grid   lg:grid-cols-3'>

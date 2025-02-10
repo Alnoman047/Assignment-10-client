@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../../Components/Navbar';
 import Foot from '../../Components/Foot';
+import Swal from 'sweetalert2';
 
 const AddCraftItem = () => {
     const handleAddItem = e=>{
@@ -17,7 +18,7 @@ const AddCraftItem = () => {
         const email= form.email.value;
         const name = form.name.value;
         const itemInfo = {imgURL,itemName,subcategory,description,price,rating,customization,stock,email,name};
-        fetch("http://localhost:5000/addItems",{
+        fetch("https://art-dairy-2-qo7z3baqq-captainboggeys-projects.vercel.app/addItems",{
             method:"POST",
             headers:{
                 "content-type":"application/json"
@@ -26,6 +27,10 @@ const AddCraftItem = () => {
         }).then(res=>res.json())
         .then(data=>{
             console.log(data)
+            if(data.insertedId){
+                 Swal.fire("Item Added Successfully!");
+               
+            }
         })
     }
     return (
@@ -33,7 +38,7 @@ const AddCraftItem = () => {
             <Navbar></Navbar>
            <div className=''>
            <h2 className="text-4xl text-center mt-10 ">Add Your Desired Items</h2>
-           <div className='main-bg  '>
+           <div className='  '>
            <form onSubmit={handleAddItem} className=' grid md:grid-cols-2 max-w-2xl mt-10 mx-auto items-center  '>
                <label className="form-control  max-w-xs">
                    <div className="label">
@@ -116,7 +121,7 @@ const AddCraftItem = () => {
                   
                </label>
                <label className='form-control mb-40  mt-10 col-span-2'>
-                  <input type="submit" className='btn' value="Add" />
+                  <input type="submit" className='btn bg-blue-700' value="Add" />
                </label>
            </form>
            </div>

@@ -86,13 +86,13 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text text-yellow-300">Email</span>
                                 </label>
-                                <input type="email" name='email' placeholder="email" className="input input-bordered bg-[#490e0e]" required />
+                                <input type="email" name='email' placeholder="email" className="input input-bordered border-white  bg-white" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text text-yellow-300">Password</span>
                                 </label>
-                                <input type="password" name='password' placeholder="password" className="input input-bordered bg-[#490e0e]" required />
+                                <input type="password" name='password' placeholder="password" className="input input-bordered border-white bg-white" required />
 
                             </div>
                             <div className='form-control flex-row  gap-2'>
