@@ -55,7 +55,7 @@ const UpdateCart = () => {
                    <span className="label-text">Image URL</span>
                    
                </div>
-               <input type="text" name='imgURL' placeholder={imgURL} className="input input-bordered w-full max-w-xs" />
+               <input type="text" name='imgURL' required placeholder={imgURL} className="input input-bordered w-full max-w-xs" />
               
            </label>
            <label className="form-control  max-w-xs">
@@ -63,7 +63,7 @@ const UpdateCart = () => {
                    <span className="label-text">Item Name</span>
                    
                </div>
-               <input type="text" name='itemName' placeholder={itemName} className="input input-bordered w-full max-w-xs" />
+               <input type="text" name='itemName' required placeholder={itemName} className="input input-bordered w-full max-w-xs" />
               
            </label>
            <label className="form-control  max-w-xs">
@@ -71,7 +71,7 @@ const UpdateCart = () => {
                    <span className="label-text">Subcategory Name</span>
                    
                </div>
-               <input type="text" name='subcategory' placeholder={subcategory} className="input input-bordered w-full max-w-xs" />
+               <input type="text" name='subcategory' required placeholder={subcategory} className="input input-bordered w-full max-w-xs" />
               
            </label>
            <label className="form-control  max-w-xs">
@@ -79,7 +79,7 @@ const UpdateCart = () => {
                    <span className="label-text">Short Description</span>
                    
                </div>
-               <input type="text" name='description' placeholder={description} className="input input-bordered w-full max-w-xs" />
+               <input type="text" name='description' required placeholder={description} className="input input-bordered w-full max-w-xs" />
               
            </label>
            <label className="form-control  max-w-xs">
@@ -87,7 +87,7 @@ const UpdateCart = () => {
                    <span className="label-text">Price</span>
                    
                </div>
-               <input type="text" name='price' placeholder={price} className="input input-bordered w-full max-w-xs" />
+               <input type="text" name='price' required placeholder={price} className="input input-bordered w-full max-w-xs" />
               
            </label>
            <label className="form-control  max-w-xs">
@@ -95,7 +95,7 @@ const UpdateCart = () => {
                    <span className="label-text">Rating</span>
                    
                </div>
-               <input type="text" name='rating' placeholder={rating} className="input input-bordered w-full max-w-xs" />
+               <input type="text" name='rating' required placeholder={rating} className="input input-bordered w-full max-w-xs" />
               
            </label>
            <label className="form-control  max-w-xs">
@@ -103,7 +103,7 @@ const UpdateCart = () => {
                    <span className="label-text">Customization</span>
                    
                </div>
-               <input type="text" name='customization' placeholder={customization} className="input input-bordered w-full max-w-xs" />
+               <input type="text" name='customization' required placeholder={customization} className="input input-bordered w-full max-w-xs" />
               
            </label>
            <label className="form-control  max-w-xs">
@@ -111,7 +111,7 @@ const UpdateCart = () => {
                    <span className="label-text">Stock Status</span>
                    
                </div>
-               <input type="text" name='stock' placeholder={stock} className="input input-bordered w-full max-w-xs" />
+               <input type="text" name='stock' required placeholder={stock} className="input input-bordered w-full max-w-xs" />
               
            </label>
            <label className="form-control  max-w-xs">
@@ -119,7 +119,7 @@ const UpdateCart = () => {
                    <span className="label-text">User Email</span>
                    
                </div>
-               <input type="email" name='email' placeholder={email} className="input input-bordered w-full max-w-xs" />
+               <input type="email" name='email' required placeholder={email} className="input input-bordered w-full max-w-xs" />
               
            </label>
            <label className="form-control  ">
@@ -127,7 +127,7 @@ const UpdateCart = () => {
                    <span className="label-text">User Name</span>
                    
                </div>
-               <input type="text" name='name' placeholder={name} className="input input-bordered w-full max-w-xs" />
+               <input type="text" name='name' required placeholder={name} className="input input-bordered w-full max-w-xs" />
               
            </label>
            <label className='form-control mb-40  mt-10 col-span-2'>
